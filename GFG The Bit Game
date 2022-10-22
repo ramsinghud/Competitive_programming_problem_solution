@@ -1,0 +1,17 @@
+    int swapBitGame(long long N){
+        // code here 
+        int cnt=0;
+        while(N){
+            if(N%2){
+                cnt++;
+            }
+            N/=2;
+        }
+        if(cnt%2==1){
+            return 1;
+        }
+        else{
+            return 2;
+        }
+       
+    }
