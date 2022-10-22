@@ -1,0 +1,41 @@
+  int digit(int n){
+      int ans=0;
+      while(n){
+          ans+=(n&1);
+          n>>=1;
+          
+      }
+      return ans;
+  }
+    string lexicographicallySmallest(string S, int k) {
+        // code here
+        int n=S.size();
+        int dig=digit(n);
+        if(dig==1){
+            k/=2;
+        }
+        else
+        k*=2;
+        
+       if(k>=n)return "-1";
+       stack<char>st;
+       st.push(S[0]);
+       for(int i=1;i<n;i++){
+           while(k!=0 and !st.empty() and st.top()>S[i]){
+               st.pop();
+               k--;
+           }
+           st.push(S[i]);
+       }
+       while(k){
+           k--;
+           st.pop();
+       }
+       string ans;
+       while(!st.empty()){
+           ans+=st.top();
+           st.pop();
+       }
+       reverse(ans.begin(),ans.end());
+       return ans;
+    }
