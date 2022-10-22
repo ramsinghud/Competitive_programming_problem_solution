@@ -1,5 +1,5 @@
     int swapBitGame(long long N){
-        // code here 
+     
         int cnt=0;
         while(N){
             if(N%2){
