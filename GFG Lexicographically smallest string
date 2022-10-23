@@ -8,7 +8,7 @@
       return ans;
   }
     string lexicographicallySmallest(string S, int k) {
-        // code here
+  
         int n=S.size();
         int dig=digit(n);
         if(dig==1){
